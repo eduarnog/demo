@@ -1,0 +1,34 @@
+
+{% extends "00-base.html" %} 
+{% block title %} Poster Generator {% endblock %} 
+{% block content%}
+<section class="section-full-h">
+  <div class="container-small-v">  
+      <h1 class="display-medium">Content</h1>
+      <form class="login-form" method="POST">
+          <div class="group-wrap-8-v">
+              <label class="label-large">Title</label>
+              <input
+                  id="title" 
+                  class="input-primary-light" 
+                  name="title" 
+                  placeholder="title"
+                  type="text"
+              />
+          </div>
+          <div class="group-wrap-8-v">
+              <label class="label-large" >Description</label>
+              <input
+                  id="description" 
+                  class="input-primary-light" 
+                  name="description" 
+                  placeholder="Description"
+                  type="text"
+              />
+          </div>
+          <br/>
+          <button type="submit" class="button-primary">Generate</button>
+      </form>
+  </div>
+  </section>              
+      {% endblock %}
