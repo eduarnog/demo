@@ -48,7 +48,7 @@
         <a href="#" class="nav-link">Pricing</a>
         <a href="#" class="nav-link">Contact</a>
         <a href="/sign-up" class="nav-link">Register</a>
-        {% if user.is_authenticated %}
+        {% if current_user.is_authenticated %}
         <div class="avatar-icon"></div>
         {% else %}
         <a href="/login" class="button-primary">Login</a>
