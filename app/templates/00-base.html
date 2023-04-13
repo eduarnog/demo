@@ -50,8 +50,8 @@
       </div>
       <div class="nav-items">
         {% if current_user.is_authenticated %}
-        <div class="avatar-icon"></div>
         <a href="#" class="nav-link">{{ user.first_name }}</a>
+        <div class="avatar-icon"></div>
         {% else %}
         <a href="#" class="nav-link">Solution</a>
         <a href="#" class="nav-link">Pricing</a>
