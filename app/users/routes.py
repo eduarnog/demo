@@ -25,7 +25,7 @@ def login():
         else:
             flash('Email does not exist.', category='error')
 
-    return render_template("users/login.html")
+    return render_template("users/login.html", user=current_user)
 
 
 @blueprint.route('/logout')
