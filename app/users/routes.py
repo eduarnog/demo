@@ -60,7 +60,14 @@ def sign_up():
             db.session.add(new_user)
             db.session.commit()
             login_user(new_user, remember=True)
+            user = User(
+                email=request.form.get('email'),
+                password=generate_password_hash(request.form.get('password'))
+            )
+            user.save()
             flash('Account created!', category='success')
             return redirect(url_for('simple_pages.dashboard'))
+        
+        
 
     return render_template("users/register.html", user=current_user)
