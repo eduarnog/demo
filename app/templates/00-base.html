@@ -44,16 +44,15 @@
 
     <!--navbar-->
     <nav class="navbar-wrap">
-      <div class="logo-wrap">
-        <img src = "{{ img }}" alt="menu"/>
-        <a  href="/" class="nav-logo-link" alt="D.emo logo">d.emo</a>
-      </div>
-      <!--nav items--> 
-      <div class="nav-items">
         <a href="#" class="nav-link">Solution</a>
-        <a href="#" class="nav-link">Pricing</a> 
+        <a href="#" class="nav-link">Pricing</a>
+        <a href="#" class="nav-link">Contact</a>
         <a href="/sign-up" class="nav-link">Register</a>
-        <a href="/login" class="button-primary">Login</a>  
+        {% if user.is_authenticated %}
+        <div class="avatar-icon"></div>
+        {% else %}
+        <a href="/login" class="button-primary">Login</a>
+        {% endif %}    
       </div>
     </nav>
 

@@ -60,7 +60,9 @@ def sign_up():
             db.session.add(new_user)
             db.session.commit()
             login_user(new_user, remember=True)
+            
             user = User(
+                name=request.form.get('first_name')
                 email=request.form.get('email'),
                 password=generate_password_hash(request.form.get('password'))
             )
