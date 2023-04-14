@@ -50,7 +50,7 @@
       </div>
       <div class="nav-items">
         {% if current_user.is_authenticated %}
-        <a href="#" class="nav-link">{{ user.first_name }}</a>
+        <a href="#" class="nav-link">{{ current_user.first_name }}</a>
         <a href="{{ url_for('users.logout') }}" class="nav-link">Logout</a>
         <div class="avatar-icon"></div>
         {% else %}
