@@ -115,7 +115,7 @@
     width: 50%;
     height: 100vh;
     max-width: 860px;
-    padding: 0px 5vw;
+    padding: 0px 7vw;
     display: flex;
     flex-direction:column;
     justify-content: center;
@@ -233,6 +233,7 @@
     z-index: 3;
     position: absolute;
     background-color: var(--md-sys-color-error-container);
+    color: black;
     font-size: 16px;
     padding: 16px;
     margin-top: 72px;
@@ -242,6 +243,7 @@
 .pop-up-succs{
     z-index: 3;
     position: absolute;
+    color: black;
     background-color: var(--md-ref-palette-error90);
     font-size: 16px;
     padding: 16px;

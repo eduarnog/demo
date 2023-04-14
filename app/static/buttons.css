@@ -1,11 +1,11 @@
 /* buttons */
 .button-primary {
     padding: 14px 40px;
-    color: var(--md-sys-color-primary-container);
-    background-color: var(--md-sys-color-on-surface);;
+    color: var();
+    background-color: var( --md-sys-color-primary);;
     border-radius: 24px;
     border: 2px solid;
-    border-color: var(--md-sys-color-on-surface);
+    border-color: var(--md-sys-color-primary);
     font-size: 1rem;
     line-height: 1rem;
     letter-spacing: +1;
