@@ -62,6 +62,5 @@ def sign_up():
             login_user(new_user, remember=True)
             flash('Account created!', category='success')
             return render_template('simple_pages/dashboard.html')
-        user.save()
 
     return render_template("users/register.html", user=current_user)
