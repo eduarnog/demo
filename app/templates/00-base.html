@@ -51,7 +51,6 @@
       <div class="nav-items">
         {% if current_user.is_authenticated %}
         <a href="#" class="nav-link">{{ current_user.first_name }}</a>
-        <a href="{{ url_for('users.logout') }}" class="nav-link">Logout</a>
         <div class="avatar-icon"></div>
         {% else %}
         <a href="#" class="nav-link">Solution</a>
@@ -95,7 +94,11 @@
     
 
     <footer class="footer-sign">
+      {% if current_user.is_authenticated %}
+      <a href="{{ url_for('users.logout') }}" class="label-medium" color="var(--md-ref-palette-neutral80)" text-decoration="none" >Logout</a>
+      {% else %}
       <label class="label-medium">©2023 d.emo</label>
+      {% endif %} 
       <label class="label-medium">All rights reserved</label>
       <label class="label-medium">Legal & Imprint</label>
     </footer>
