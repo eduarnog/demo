@@ -105,7 +105,7 @@
     width: 100vw;
     display: block;
     background-color: var(--md-ref-palette-primary80) ;
-    background-image: "{{ url_for('static', filename='hero.jpg') }}";
+    background-image: url(https://github.com/eduarnog/demo/blob/main/app/static/hero.jpg?raw=true);
     background-size: cover;
     background-position: top;
     min-height: fit-content;
