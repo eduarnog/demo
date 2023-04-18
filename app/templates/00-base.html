@@ -37,15 +37,17 @@
     {% endblock %}
 
     <!--JavaScript-->
+    <script src="{{ url_for('static', filename='scripts.js') }}"></script>
 
   </head>
 
   <body class ="body"> 
 
     <!--navbar-->
-    <nav class="navbar-wrap">
+    <div class="navbar-wrap">
+    <nav class="navbar">
       <div class="logo-wrap">
-        <img class="menu-navbar" src = "{{ url_for('static', filename='menu_24px.svg') }}" alt="menu"/>
+        <img id="menu-navbar" class="menu-navbar" src = "{{ url_for('static', filename='menu_24px.svg') }}" alt="menu"/>
         <a  href="/" class="nav-logo-link" alt="D.emo logo">d.emo</a>
       </div>
       <div class="nav-items">
@@ -61,6 +63,12 @@
         {% endif %}    
       </div>
     </nav>
+    <div id="nav-menu-open" class="nav-menu-open" id="nav-menu-open">
+      <a href="#" class="nav-link">Menu item 1</a>
+      <a href="#" class="nav-link">Menu item 1</a>
+      <a href="#" class="nav-link">Menu item 1</a>
+    </div> 
+  </div>
 
     <!--pop up--> 
     {% with messages = get_flashed_messages(with_categories=true) %}
@@ -91,6 +99,7 @@
     
     {% endblock %}   
     </main>
+    
     
 
     <footer class="footer-sign">

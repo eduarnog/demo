@@ -14,13 +14,23 @@
 }
 
 /* Containers - navigation */
-.navbar-wrap {
+
+.navbar-wrap{
+  display:block;
+  position: fixed;
+  top: auto;
+  right: 0;
+  left: 0;
+
+}
+
+.navbar {
+    position: static;
     height: 72px;
     width: auto;
     background-color: var(--md-sys-color-background);
     padding: 0px 24px;
     z-index: 2;
-    position: fixed;
     left: 0%;
     right: 0% ;
     top: 0%;
@@ -69,6 +79,20 @@
 .nav-link:hover {
     color: var(--md-ref-palette-primary35);
  
+}
+
+.nav-menu-open{
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    padding: 16px;
+    background-color: black;
+    color: azure;
+}
+
+.nav-menu-open:target{
+    display: block;
 }
 .footer-sign {
     width: 100%;
