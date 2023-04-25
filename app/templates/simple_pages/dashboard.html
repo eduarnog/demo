@@ -3,32 +3,25 @@
 {% block title %} Poster Generator {% endblock %} 
 {% block content%}
 <section class="section-full-h">
-  <div class="container-small-v">  
-      <h1 class="display-medium">Content</h1>
-      <form class="login-form" method="POST">
-          <div class="group-wrap-8-v">
-              <label class="label-large">Title</label>
-              <input
-                  id="title" 
-                  class="input-primary-light" 
-                  name="title" 
-                  placeholder="title"
-                  type="text"
-              />
-          </div>
-          <div class="group-wrap-8-v">
-              <label class="label-large" >Description</label>
-              <input
-                  id="description" 
-                  class="input-primary-light" 
-                  name="description" 
-                  placeholder="Description"
-                  type="text"
-              />
-          </div>
-          <br/>
-          <button type="submit" class="button-primary">Generate</button>
-      </form>
+  <div class="container-small-v">
+    <h1 class="headline-medium">Notes</h1>
+    <h5 class="body-medium">Add your notes</h1>
+    <ul  id="notes">
+      {% for note in current_user.notes %}
+      <li>
+        {{ note.data }}
+        <button type="button" onClick="deleteNote({{ note.id }})">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </li>
+      {% endfor %}
+    </ul>
+    <form  class="login-form" method="POST">
+      <textarea class="label-large" name="note" id="note"></textarea>
+      <br />
+      <br />
+      <button class="button-primary" type="submit">Add Note</button>
+    </form>
   </div>
   </section>              
-      {% endblock %}
+{% endblock %}
