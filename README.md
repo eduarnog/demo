@@ -40,7 +40,7 @@ pip install -r requirements.txt
 To run the application, execute the following command in the terminal:
 
 ```bash
-python main.py
+python run.py
 ```
 
 ## Viewing the Application
