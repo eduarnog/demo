@@ -1,25 +1,52 @@
-# 3.4 - Flask application
+## READ ME
 
-This project aims to develop a tool for documenting and applying visual identities with the help of generative design. I've been working on this project since 2022, when I created a prototype using javaScript(P5.js) and conducted initial user and market research better to understand the state of brand consistency in visual design. In this software, a group of users will input a design system and defines the rules by which the tool will generate layout variations. D.emo will allow users with less visual design expertise to create visual communication while keeping brand consistency.
+# Introduction
 
-Since I already had some understanding of HTML and CSS basic functionalities, in this exercise, I explored some concepts that I needed clarification on, like CSS variables, flexbox parameters, writing a good HTML structure, and CSS responsiveness. Creating this login flow allowed me to test some initial ideas for this product. For sure, there are many good practices that I still need to learn regarding front-end development, so let me know how I could optimize this code.
+This project is a web-based tool that aims to assist users in applying visual identities with the help of generative design. The tool is designed to allow a group of users to input a design system and define the rules by which the tool will generate layout variations. The project was started in 2022, with the creation of a prototype using JavaScript (P5.js) and initial user and market research. The software aims to enable users with less visual design expertise to create visual communication while maintaining brand consistency.
 
-Enabled flow: home page > register >  login > dashboard
+The project is built using Python's Flask framework, and the front-end is developed using Jinja templating. This READ ME file will guide you on how to set up and run the application on your local machine.
 
-Techstack: Python>Flask>Jinja
+## Requirements
 
-## Setup & Installation
+The following dependencies are required to run the application:
+
+alembic
+blinker
+click
+Flask
+Flask-Login
+Flask-Migrate
+Flask-SQLAlchemy
+greenlet
+gunicorn
+itsdangerous
+Jinja2
+Mako
+MarkupSafe
+psycopg2
+python-dotenv
+SQLAlchemy
+typing_extensions
+Werkzeug
+Setup and Installation
+
+### To install the dependencies, run the following command in the terminal:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-## Running The App
+## Running the Application
+To run the application, execute the following command in the terminal:
 
 ```bash
-run main.py
+python main.py
 ```
 
-## Viewing The App
+## Viewing the Application
 
-Go to `http://127.0.0.1:5000`
+After running the application, open your web browser and navigate to `http://127.0.0.1:5000` to view the home page. The flow of the application is as follows: home page > register > login > dashboard > add content.
+
+### Conclusion
+
+This project is a work in progress, and the login flow presented here is just an exercise exploring some front-end concepts. There are still many good practices to learn regarding front-end development. Please feel free to contribute and share your ideas on how to optimize this code.
