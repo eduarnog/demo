@@ -8,3 +8,4 @@ class User(db.Model, UserMixin):
     first_name = db.Column(db.String(150))
     picture_url = db.Column(db.String(260))
     slug = db.Column(db.String(80), unique=True)
+    notes = db.relationship('Note')

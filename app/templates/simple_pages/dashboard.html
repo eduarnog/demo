@@ -6,7 +6,7 @@
   <div class="container-small-v">
     <h1 class="headline-medium">Notes</h1>
     <h5 class="body-medium">Add your notes</h1>
-    <ul  id="notes">
+    <ul  class="body-large" id="notes">
       {% for note in current_user.notes %}
       <li>
         {{ note.data }}
