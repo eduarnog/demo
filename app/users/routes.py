@@ -61,6 +61,6 @@ def sign_up():
             db.session.commit()
             login_user(new_user, remember=True)
             flash('Account created!', category='success')
-            return render_template('simple_pages/dashboard.html')
+            return redirect(url_for("simple_pages.dashboard"))
 
     return render_template("users/register.html", user=current_user)
