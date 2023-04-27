@@ -8,15 +8,14 @@ The project is built using Python's Flask framework, and the front-end is develo
 
 ## Techstack
 
-Python 3 as the primary programming language
-Flask as the web framework
-Jinja templating engine for generating HTML templates
-PostgreSQL as the database management system
-Alembic for database migrations
-HTML, CSS, and JavaScript for the front-end
-P5.js library for the prototype
-Gunicorn as the production server
-Git for version control
+• Python 3 as the primary programming language
+• Flask as the web framework
+• Jinja templating engine for generating HTML templates
+• PostgreSQL as the database management system
+• Alembic for database migrations
+• HTML, CSS, and JavaScript for the front-end
+• Gunicorn as the production server
+• Git for version control
 
 ### To install the dependencies, run the following command in the terminal:
 
