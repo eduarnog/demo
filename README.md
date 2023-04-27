@@ -6,29 +6,17 @@ This project is a web-based tool that aims to assist users in applying visual id
 
 The project is built using Python's Flask framework, and the front-end is developed using Jinja templating. This READ ME file will guide you on how to set up and run the application on your local machine.
 
-## Requirements
+## Techstack
 
-The following dependencies are required to run the application:
-
-alembic
-blinker
-click
-Flask
-Flask-Login
-Flask-Migrate
-Flask-SQLAlchemy
-greenlet
-gunicorn
-itsdangerous
-Jinja2
-Mako
-MarkupSafe
-psycopg2
-python-dotenv
-SQLAlchemy
-typing_extensions
-Werkzeug
-Setup and Installation
+Python 3 as the primary programming language
+Flask as the web framework
+Jinja templating engine for generating HTML templates
+PostgreSQL as the database management system
+Alembic for database migrations
+HTML, CSS, and JavaScript for the front-end
+P5.js library for the prototype
+Gunicorn as the production server
+Git for version control
 
 ### To install the dependencies, run the following command in the terminal:
 
