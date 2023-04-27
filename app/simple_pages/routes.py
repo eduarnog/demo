@@ -14,14 +14,28 @@ def index():
 @login_required
 def dashboard():
     if request.method == 'POST': 
-        note = request.form.get('note')#Gets the note from the HTML 
+        note_id = request.form.get('note_id')
+        note_data = request.form.get('note')
 
-        if len(note) < 1:
-            flash('Note is too short!', category='error') 
-        else:
-            new_note = Note(data=note, user_id=current_user.id)  #providing the schema for the note 
-            db.session.add(new_note) #adding the note to the database 
-            db.session.commit()
-            flash('Note added!', category='success')
+        if note_id: # Editing an existing note
+            note = Note.query.get(note_id)
+            if note.user_id != current_user.id:
+                flash('You do not have permission to edit this note', category='error')
+            elif len(note_data) < 1:
+                flash('Note is too short!', category='error') 
+            else:
+                note.data = note_data
+                note.edited = True
+                db.session.commit()
+                flash('Note edited!', category='success')
+        else: # Adding a new note
+            if len(note_data) < 1:
+                flash('Note is too short!', category='error') 
+            else:
+                new_note = Note(data=note_data, user_id=current_user.id)
+                db.session.add(new_note)
+                db.session.commit()
+                flash('Note added!', category='success')
 
-    return render_template('simple_pages/dashboard.html')
+    notes = Note.query.filter_by(user_id=current_user.id).order_by(Note.date.desc()).all()
+    return render_template('simple_pages/dashboard.html', notes=notes)

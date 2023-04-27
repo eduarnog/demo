@@ -2,26 +2,65 @@
 {% extends "00-base.html" %} 
 {% block title %} Poster Generator {% endblock %} 
 {% block content%}
-<section class="section-full-h">
+<section class="section-full-h" style="display:inline-flex">
   <div class="container-small-v">
     <h1 class="headline-medium">Content</h1>
-    <h5 class="body-medium">Add your title, submit and add the description </h1>
-    <ul  class="body-large" id="notes">
+    <h5 class="body-large">Add the information you want to showcase with your artwork </h5>
+    <ul class="body-large" id="notes">
       {% for note in current_user.notes %}
-      <li>
-        {{ note.data }}
-        <button type="button" onClick="deleteNote({{ note.id }})">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </li>
+        <li>
+          {{ note.data }}
+          <button type="button" onClick="editNote({{ note.id }}, '{{ note.data }}')">
+            <span aria-hidden="true">&#9998;</span>
+          </button>
+          <button type="button" onClick="deleteNote({{ note.id }})">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </li>
       {% endfor %}
     </ul>
-    <form  class="login-form" method="POST">
+    <form class="login-form" method="POST">
       <textarea class="label-large" name="note" id="note"></textarea>
       <br />
       <br />
-      <button class="button-primary" type="submit">Add Content</button>
+      <input type="hidden" id="note-id" name="note-id" value="">
+      <button class="button-primary" type="submit" id="add-note-button">Add Content</button>
+      <button class="button-primary" type="button" id="update-note-button" style="display: none;">Update Content</button>
     </form>
   </div>
-  </section>              
+  <div class="container-small-v">
+
+  </div>
+</section>
+
+{% block javascript %}
+<script type="text/javascript">
+  function editNote(noteId, noteData) {
+    document.getElementById("note").value = noteData;
+    document.getElementById("note-id").value = noteId;
+    document.getElementById("add-note-button").style.display = "none";
+    document.getElementById("update-note-button").style.display = "block";
+  }
+
+  function deleteNote(noteId) {
+    fetch("/delete-note", {
+      method: "POST",
+      body: JSON.stringify({ noteId: noteId }),
+    }).then((_res) => {
+      window.location.href = "/dashboard";
+    });
+  }
+
+  document.getElementById("update-note-button").addEventListener("click", function() {
+    var noteId = document.getElementById("note-id").value;
+    var noteData = document.getElementById("note").value;
+    fetch("/update-note", {
+      method: "POST",
+      body: JSON.stringify({ noteId: noteId, noteData: noteData }),
+    }).then((_res) => {
+      window.location.href = "/dashboard";
+    });
+  });
+</script>
+  {% endblock %}            
 {% endblock %}

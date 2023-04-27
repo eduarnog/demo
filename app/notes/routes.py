@@ -17,3 +17,14 @@ def delete_note():
             db.session.commit()
 
     return jsonify({})
+
+@blueprint.route('/edit-note', methods=['POST'])
+def edit_note():
+    note = json.loads(request.data)
+    note_id = note['noteId']
+    note_data = note['noteData']
+    edited_note = Note.query.filter_by(id=note_id, user_id=current_user.id).first()
+    if not edited_note:
+        flash('You do not have permission to edit this note', category='error')
+    else:
+        return jsonify({'noteData': edited_note.data})
